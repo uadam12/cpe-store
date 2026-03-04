@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CPE Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://js.paystack.co/v2/inline.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body class="bg-[#FDFDFD] text-slate-900">
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div class="container mx-auto px-4 sm:px-6 py-1 flex justify-between items-center">
+            <a href="." class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                    <i class="fa-solid fa-bolt text-white text-sm"></i>
+                </div>
+                <span class="text-xl font-extrabold tracking-tighter uppercase text-slate-900">CPE</span>
+                <span class="text-xl font-extrabold tracking-tighter uppercase text-blue-600">Store</span>
+            </a>
+
+            <button onclick="toggleCart()" class="relative p-2.5 hover:bg-slate-50 rounded-full transition-all group">
+                <i
+                    class="fa-solid fa-cart-shopping text-slate-700 text-lg group-active:scale-90 transition-transform"></i>
+                <span id="cart-count"
+                    class="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold rounded-full h-5 w-5 flex items-center justify-center border-2 border-white">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="relative py-12 md:py-24 px-4 overflow-hidden">
+        <div class="container mx-auto relative z-10 text-center md:text-left">
+            <h1 class="text-4xl md:text-7xl font-extrabold text-slate-900 mb-6 leading-[1.1]">
+                Tech for the <span class="text-blue-600 italic">Nigerian</span> Edge.
+            </h1>
+            <p class="text-slate-500 text-base md:text-xl  mb-8 leading-relaxed">
+                Premium Store curated for performance. Validated for high-availability and modern standard
+                compliance.
+            </p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 mb-24">
+        <div class="flex items-end justify-between mb-8">
+            <div>
+                <h2 class="text-2xl font-bold tracking-tight">New Arrivals</h2>
+                <div class="h-1 w-12 bg-blue-600 rounded-full mt-2"></div>
+            </div>
+            <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest">Scroll to explore</p>
+        </div>
+
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+        </div>
+    </main>
+
+    <section
+        class="relative bg-gradient-to-br from-slate-50 via-white to-blue-50 border-t border-slate-200 py-12 px-6 overflow-hidden">
+        <div class="container mx-auto max-w-6xl">
+
+            <h3 class="text-3xl mb-6 text-center font-extrabold text-slate-900 tracking-tight border-b">
+                Meet The Project Team
+            </h3>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-center">
+                <div class="relative">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-[2.5rem] blur opacity-20">
+                    </div>
+
+                    <div
+                        class="relative bg-white/70 backdrop-blur-xl rounded-[2.5rem] p-5 shadow-2xl border border-white/40">
+
+
+                        <p class="mt-4 text-slate-600 leading-relaxed text-lg">
+                            This project was brought to life through strategic planning,
+                            creative design execution, and strong structural development.
+                            Each member played a key role in delivering a polished final product.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="relative">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-[2.5rem] blur opacity-20">
+                    </div>
+
+                    <div
+                        class="relative bg-white/70 backdrop-blur-xl rounded-[2.5rem] p-5 shadow-2xl border border-white/40">
+                        <blockquote class="text-xl italic font-medium text-slate-800 leading-relaxed mb-8">
+                            "Clear leadership, creative design, and strong structural foundations
+                            combined to deliver a professional and scalable project outcome."
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="space-y-8 md:col-span-2 lg:col-span-1">
+
+                    <!-- Team Members -->
+                    <div class="space-y-3">
+
+                        <div
+                            class="flex items-center gap-4 p-2 rounded-2xl bg-white shadow-md hover:shadow-xl transition duration-300 border border-slate-100">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-600 text-white font-bold text-lg">
+                                UI
+                            </div>
+                            <div>
+                                <p class="font-semibold text-slate-900">
+                                    Usman Adam Imam
+                                </p>
+                                <p class="text-sm text-slate-500">
+                                    (20/05/04/008) — Project Manager
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-4 p-4 rounded-2xl bg-white shadow-md hover:shadow-xl transition duration-300 border border-slate-100">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center rounded-full bg-indigo-600 text-white font-bold text-lg">
+                                UM
+                            </div>
+                            <div>
+                                <p class="font-semibold text-slate-900">
+                                    Umar Mustapha
+                                </p>
+                                <p class="text-sm text-slate-500">
+                                    (20/05/04/213) — Design / Style
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-4 p-4 rounded-2xl bg-white shadow-md hover:shadow-xl transition duration-300 border border-slate-100">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center rounded-full bg-emerald-600 text-white font-bold text-lg">
+                                AL
+                            </div>
+                            <div>
+                                <p class="font-semibold text-slate-900">
+                                    Abubakar Los
+                                </p>
+                                <p class="text-sm text-slate-500">
+                                    (20/05/04/008) — Core Structure
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center bg-white">
+        <p class="text-slate-400 text-xs font-medium">
+            &copy; 2026 ElectroStream |
+            Designed by Mogcolis Team
+        </p>
+    </footer>
+
+    <aside id="cart-sidebar"
+        class="cart-drawer fixed top-0 right-0 h-full w-full sm:w-[450px] bg-white shadow-2xl z-[60] flex flex-col">
+        <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+            <div>
+                <h2 class="text-xl font-extrabold text-slate-900">Your Shopping Bag</h2>
+                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Complete your order</p>
+            </div>
+            <button onclick="toggleCart()"
+                class="w-10 h-10 flex items-center justify-center hover:bg-slate-50 rounded-full transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+        </div>
+
+        <div class="p-6 bg-slate-50 border-t border-slate-100">
+            <div class="flex justify-between items-center mb-6">
+                <span class="text-slate-500 font-bold uppercase text-xs">Total Amount</span>
+                <span id="cart-total" class="text-2xl font-extrabold text-blue-600 tracking-tighter">₦0.00</span>
+            </div>
+            <button onclick="openCheckoutModal()"
+                class="w-full bg-slate-900 text-white py-5 rounded-2xl font-bold text-sm uppercase tracking-widest hover:bg-blue-600 shadow-xl shadow-slate-200 active:scale-[0.98] transition-all">
+                Check Out Now
+            </button>
+        </div>
+    </aside>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/40 backdrop-blur-sm px-4">
+
+        <div
+            class="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-slate-100 p-8 animate-scaleIn">
+
+            <!-- Close Button -->
+            <button onclick="closeCheckoutModal()"
+                class="absolute top-5 right-5 w-9 h-9 flex items-center justify-center rounded-full hover:bg-slate-100 transition">
+                <i class="fa-solid fa-xmark text-slate-500"></i>
+            </button>
+
+            <!-- Header -->
+            <h2 class="text-2xl font-extrabold text-slate-900 mb-2">
+                Complete Your Order
+            </h2>
+            <p class="text-slate-500 text-sm mb-8">
+                Enter your details to proceed with secure payment.
+            </p>
+
+            <!-- Form -->
+            <form id="checkout-form" class="space-y-5">
+
+                <!-- First Name -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-600 mb-2">
+                        First Name
+                    </label>
+                    <input type="text" id="first-name"
+                        class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+                        placeholder="Enter your first name">
+                    <p id="first-name-error" class="text-red-500 text-xs mt-2 hidden"></p>
+                </div>
+
+                <!-- Last Name -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-600 mb-2">
+                        Last Name
+                    </label>
+                    <input type="text" id="last-name" required
+                        class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+                        placeholder="Enter your last name">
+                    <p id="last-name-error" class="text-red-500 text-xs mt-2 hidden"></p>
+                </div>
+
+                <!-- Email -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-600 mb-2">
+                        Email Address
+                    </label>
+                    <input type="email" id="email" required
+                        class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+                        placeholder="you@email.com">
+                    <p id="email-error" class="text-red-500 text-xs mt-2 hidden"></p>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit"
+                    class="w-full bg-slate-900 text-white py-4 rounded-2xl font-bold uppercase text-sm tracking-widest hover:bg-blue-600 transition-all active:scale-[0.98]">
+                    Proceed to Payment
+                </button>
+
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="scripts/main.js"></script>
+</body>
+
+</html>
